@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: medicines-service
+
+  config:
+    import: configserver:http://localhost:8888
+
+  cache:
+    redis:
+      time-to-live: 3600000 # 60 phút (tính bằng mili-giây: 60 * 60 * 1000 = 3,600,000 ms)
+      cache-null-values: false
+    type: redis
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
